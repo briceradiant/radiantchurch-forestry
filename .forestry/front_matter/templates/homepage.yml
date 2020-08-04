@@ -1,4 +1,41 @@
 ---
 label: Homepage
 hide_body: true
-fields: []
+fields:
+- name: home_hero
+  type: field_group
+  config: {}
+  fields:
+  - name: home_hero_headline
+    type: text
+    config:
+      required: false
+    label: Headline
+  - name: home_hero_body_text
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Body Text
+  - name: home_hero_image
+    type: file
+    config:
+      maxSize: 64
+    label: Image
+  - name: home_hero_btn_text
+    type: text
+    config:
+      required: false
+    label: CTA Button Text
+  - name: home_hero_btn_url
+    type: text
+    config:
+      required: false
+    label: CTA Button URL
+    description: If the URL is going to a place internally on your website (i.e. "About
+      Us") then begin the URL with "/" (i.e. "/about-us"). Otherwise, begin the URL
+      with "http://" (i.e. "https://")
+  label: Hero

@@ -16,6 +16,13 @@ sections:
   - page
   - blocks-page
 - type: directory
+  path: src/pages/sermons
+  label: Sermons
+  create: documents
+  match: "**/*"
+  templates:
+  - sermon
+- type: directory
   path: src/pages/posts
   label: Posts
   create: documents
