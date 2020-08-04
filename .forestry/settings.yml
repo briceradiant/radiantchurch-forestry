@@ -13,6 +13,7 @@ sections:
   match: "*.md"
   new_doc_ext: md
   templates:
+  - homepage
   - page
   - blocks-page
 - type: directory
