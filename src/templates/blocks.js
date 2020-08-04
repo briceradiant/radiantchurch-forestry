@@ -59,13 +59,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         blocks {
           component
-          image {
-            childImageSharp {
-              fluid(maxWidth: 800) {
-                srcSet
-              }
-            }
-          }
+          # image {
+          #   childImageSharp {
+          #     fluid(maxWidth: 800) {
+          #       srcSet
+          #     }
+          #   }
+          # }
           title
           subtitle
           content
