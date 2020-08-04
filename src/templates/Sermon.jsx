@@ -3,9 +3,10 @@ import Helmet from 'react-helmet'
 // eslint-disable-next-line
 import { Link, graphql } from 'gatsby'
 
-import PostList from '../components/post-list'
+// import Layout from '../components/layout'
+// import PostList from '../components/post-list'
 
-class ListTemplate extends React.Component {
+class Sermon extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
@@ -21,27 +22,18 @@ class ListTemplate extends React.Component {
         />
         <section className="section page-content">
           <div class="container article-header has-text-centered">
-            <h1 class="title is-1">{post.frontmatter.title}</h1>
-            <hr />
+            <h1 class="title">Sermon: {post.frontmatter.title}</h1>
           </div>
-          <main className="container content-container">
-            <div
-              className="content"
-              dangerouslySetInnerHTML={{ __html: post.html }}
-            />
-            <hr />
-            <PostList posts={childPosts} />
-          </main>
         </section>
       </>
     )
   }
 }
 
-export default ListTemplate
+export default Sermon
 
-export const pageQuery = graphql`
-  query ListPageBySlug($slug: String!) {
+export const sermonQuery = graphql`
+  query SermonBySlug($slug: String!) {
     site {
       siteMetadata {
         title

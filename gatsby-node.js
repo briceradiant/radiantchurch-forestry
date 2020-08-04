@@ -1,18 +1,26 @@
 const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
+const {
+  createFilePath
+} = require('gatsby-source-filesystem')
 
 function isIndexPage(post) {
   return path.basename(post.node.fileAbsolutePath) === 'index.md'
 }
 
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+exports.createPages = ({
+  graphql,
+  actions
+}) => {
+  const {
+    createPage
+  } = actions
 
   return new Promise((resolve, reject) => {
     const templates = {
       list: path.resolve('./src/templates/list.js'),
       single: path.resolve('./src/templates/single.js'),
       blocks: path.resolve('./src/templates/blocks.js'),
+      sermonTemplate: path.resolve('./src/templates/Sermon.jsx')
     }
     resolve(
       // query for markdown files
@@ -48,7 +56,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         // create the posts
         const posts = result.data.allMarkdownRemark.edges
-
+        // const sermons = result.data.allMarkdownRemark.edges
         for (post of posts) {
           let postContext = {
             slug: post.node.fields.slug,
@@ -59,7 +67,9 @@ exports.createPages = ({ graphql, actions }) => {
             const parentRelPath = path.dirname(
               path.relative(__dirname, post.node.fileAbsolutePath)
             )
-            postContext.children = posts.filter(({ node }) => {
+            postContext.children = posts.filter(({
+              node
+            }) => {
               if (path.basename(node.fileAbsolutePath) === 'index.md') {
                 return false
               }
@@ -87,16 +97,54 @@ exports.createPages = ({ graphql, actions }) => {
             context: postContext,
           })
         }
+        // for (sermon of sermons) {
+        //   let sermonContext = {
+        //     slug: sermon.node.fields.slug,
+        //   }
+
+        //   // if it's a sermon index, add corresponding posts to context
+        //   if (isIndexPage(sermon)) {
+        //     const parentRelPath = path.dirname(
+        //       path.relative(__dirname, sermon.node.fileAbsolutePath)
+        //     )
+        //     sermonContext.children = sermons.filter(({
+        //       node
+        //     }) => {
+        //       if (path.basename(node.fileAbsolutePath) === 'index.md') {
+        //         return false
+        //       }
+        //       const childRelPath = path.relative(
+        //         __dirname,
+        //         node.fileAbsolutePath
+        //       )
+        //       return childRelPath.startsWith(parentRelPath)
+        //     })
+        //   }
+        //   createPage({
+        //     path: sermon.node.fields.slug,
+        //     component: templates.sermonTemplate,
+        //     context: sermonContext,
+        //   })
+        // }
       })
     )
   })
 }
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+exports.onCreateNode = ({
+  node,
+  actions,
+  getNode
+}) => {
+  const {
+    createNodeField
+  } = actions
 
   if (node.internal.type === 'MarkdownRemark') {
-    const value = createFilePath({ node, getNode })
+    const value = createFilePath({
+      node,
+      getNode
+    })
     createNodeField({
       name: `slug`,
       node,

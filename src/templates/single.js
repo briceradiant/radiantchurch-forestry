@@ -3,8 +3,6 @@ import Helmet from 'react-helmet'
 // eslint-disable-next-line
 import { Link, graphql } from 'gatsby'
 
-import Layout from '../components/layout'
-
 class SingleTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
@@ -12,7 +10,7 @@ class SingleTemplate extends React.Component {
     const siteDescription = post.excerpt
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <>
         <Helmet
           htmlAttribute={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}
@@ -35,7 +33,7 @@ class SingleTemplate extends React.Component {
             />
           </main>
         </section>
-      </Layout>
+      </>
     )
   }
 }

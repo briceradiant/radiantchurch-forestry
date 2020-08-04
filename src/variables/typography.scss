@@ -1,0 +1,246 @@
+@import "../mixins/media.scss";
+
+@font-face {
+  font-family: "gilroy-extrabold";
+  src: url("/gilroy-extrabold-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Avenir Book";
+  src: url("/avenir-book.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Gilroy Light";
+  src: url("/gilroy-light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Gilroy Extrabold";
+  src: url('/gilroy-extrabold.woff2') format('woff2'),
+    url('/gilroy-extrabold.woff') format('woff'),
+    url('/gilroy-extrabold.otf') format('opentype');
+}
+
+@mixin avenir-book {
+  font-family: 'Avenir Book', sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+@mixin gilroy-light {
+  font-family: 'Gilroy Light', sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+@mixin gilroy-extrabold {
+  font-family: "Gilroy Extrabold", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@mixin caps-font {
+  @include gilroy-light;
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.avenir-book-font {
+  @include avenir-book;
+}
+
+.gilroy-light-font {
+  @include gilroy-light;
+}
+
+.gilroy-extrabold-font {
+  @include gilroy-extrabold;
+}
+
+
+html,
+body {
+  @include avenir-book;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.035em;
+}
+
+.text-base {
+  @include avenir-book;
+  font-size: 1rem;
+  line-height: 1.555rem;
+  letter-spacing: 0.035em;
+}
+
+.caps {
+  @include caps-font;
+}
+
+h1 {
+  @include gilroy-extrabold;
+  font-size: 3.611rem;
+  line-height: 4.166rem;
+}
+
+h2 {
+  @include gilroy-extrabold;
+  font-size: 2rem;
+  line-height: 2.222rem;
+}
+
+h3 {
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.666rem;
+  line-height: 2.222rem;
+}
+
+.text-xs {
+  // 12px
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+}
+
+.text-sm {
+  // 14px
+  font-size: 0.875rem;
+  line-height: 1rem;
+}
+
+.text-md {
+  // 18px
+  font-size: 1.125rem;
+}
+
+.text-lg {
+  // 24px
+  font-size: 1.5rem;
+}
+
+.text-xl {
+  // 30px
+  font-size: 1.675rem;
+}
+
+.text-2xl {
+  // 36px
+  font-size: 2.25rem;
+  line-height: 1.2;
+}
+
+.text-3xl {
+  // 42px
+  font-size: 2.625rem;
+  line-height: 1.2;
+}
+
+.text-4xl {
+  // 56px
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+
+.text-5xl {
+  // 70px
+  font-size: 4.375rem;
+  line-height: 1;
+}
+
+.text-6xl {
+  // 88px
+  font-size: 6vw;
+  line-height: 1;
+}
+
+
+@include desktop {
+  .text-6xl {
+    // 88px
+    font-size: 5.5rem;
+  }
+
+  .text-2xl {
+    font-size: 5rem;
+    line-height: 6rem;
+    // padding-right: 10%;
+  }
+
+  h1.text-xl {
+    padding-right: 10%;
+  }
+}
+
+@include max_desktop {
+
+  // html,
+  // body {
+  //   font-size: 16px;
+  //   line-height: 26px;
+  // }
+
+  // .text-md {
+  //   font-size: 1.466rem;
+  //   line-height: 2rem;
+  // }
+
+  // .text-lg {
+  //   font-size: 1.8rem;
+  //   line-height: 2rem;
+  // }
+}
+
+@media screen and (max-width: 1260px) {
+  // .text-xl {
+  //   font-size: calc(0.5rem + 3.5vw);
+  //   line-height: calc(0.5rem + 4.5vw);
+  // }
+}
+
+@include tablet {
+  // .text-lg {
+  //     font-size: 2.5rem;
+  //     line-height: 2.7rem;
+  // }
+
+  // .text-xs {
+  //     font-size: 1rem;
+  //     line-height: 1.2rem;
+  // }
+}
+
+@include phone {
+  // .caps {
+  //   font-size: 0.8rem;
+  // }
+
+  // .text-sm-2 {
+  //   font-size: 1.2rem;
+  //   line-height: 1.9rem;
+  // }
+
+  // .text-md {
+  //   font-size: 1.3rem;
+  //   line-height: 1.7rem;
+  // }
+
+  // .text-lg {
+  //   font-size: 1.25rem;
+  //   line-height: 1.75rem;
+  // }
+}
+
+@include sm-phone {
+  // .text-xl {
+  //   font-size: calc(0.5rem + 5.5vw);
+  //   line-height: calc(0.5rem + 7vw);
+  // }
+
+  // .text-2xl {
+  //   font-size: calc(0.5rem + 5.85vw);
+  //   line-height: calc(0.5rem + 8.5vw);
+  // }
+}

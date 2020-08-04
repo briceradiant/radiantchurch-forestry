@@ -18,16 +18,16 @@ const Feature = ({ block }) => (
               : 'columns is-vcentered'
           }
         >
-          <div class="column is-one-half">
+          <div className="column is-one-half">
             {block.image && (
               <img
                 alt={block.title}
-                srcset={block.image.childImageSharp.fluid.srcSet}
+                srcSet={block.image.childImageSharp.fluid.srcSet}
               />
             )}
           </div>
           <div className="column is-one-half">
-            <div class="section">
+            <div className="section">
               <h1 className="title is-3">{block.title}</h1>
               <div
                 className="content"

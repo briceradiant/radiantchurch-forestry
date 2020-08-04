@@ -1,0 +1,28 @@
+@mixin underline($pos) {
+    // content: "";
+    // display: inline-block;
+    // position: absolute;
+    // bottom: 0;
+    // left: 0;
+    // width: 100%;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    // bottom: 0;
+    bottom: $pos;
+    left: 0;
+    width: 100%;
+    height: auto;
+    // -webkit-transform: translateY(100%);
+    // transform: translateY(100%);
+}
+
+@mixin circled {
+    @include underline;
+}
+
+@mixin underline1_black($pos, $height) {
+    @include underline($pos);
+    height: $height;
+    background: url('/underline1_black.svg') center/cover no-repeat;
+}
