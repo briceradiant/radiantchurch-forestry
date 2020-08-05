@@ -20,10 +20,10 @@ fields:
     default: ''
     config:
       required: false
-      wysiwyg: false
+      wysiwyg: true
       schema:
         format: markdown
-    label: Body Text
+    label: " Body Text"
   - name: home_hero_image
     type: file
     config:
