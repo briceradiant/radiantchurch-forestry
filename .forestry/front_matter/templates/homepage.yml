@@ -7,9 +7,13 @@ fields:
   config: {}
   fields:
   - name: home_hero_headline
-    type: text
+    type: textarea
+    default: ''
     config:
       required: false
+      wysiwyg: true
+      schema:
+        format: markdown
     label: Headline
   - name: home_hero_body_text
     type: textarea
