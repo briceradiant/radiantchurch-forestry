@@ -43,3 +43,5 @@ fields:
       Us") then begin the URL with "/" (i.e. "/about-us"). Otherwise, begin the URL
       with "http://" (i.e. "https://")
   label: Hero
+pages:
+- src/pages/index.md

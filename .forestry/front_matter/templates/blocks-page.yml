@@ -18,5 +18,3 @@ fields:
   - block__feature
   - block__3col
   - block__cta
-pages:
-- src/pages/index.md
