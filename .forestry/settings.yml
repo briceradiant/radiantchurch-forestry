@@ -10,12 +10,10 @@ sections:
   path: src/pages
   label: Pages
   create: documents
-  match: "*.md"
+  match: "*"
   new_doc_ext: md
   templates:
-  - homepage
   - page
-  - blocks-page
 - type: directory
   path: src/pages/sermons
   label: Sermons
